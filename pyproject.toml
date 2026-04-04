@@ -1,0 +1,10 @@
+[project]
+name = "picas"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "lxml>=6.0.2",
+    "types-lxml>=2026.2.16",
+]
