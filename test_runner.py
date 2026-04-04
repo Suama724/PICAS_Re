@@ -1,11 +1,13 @@
 import sys
 
 from tests import (
-    test_01_datalayer_structure_and_timer
+    test_01_datalayer_structure_and_timer,
+    test_02_path_and_parser
 )
 
 TESTS = {
-    "T01": test_01_datalayer_structure_and_timer
+    "T01": test_01_datalayer_structure_and_timer,
+    "T02": test_02_path_and_parser
 }
 
 if __name__ == "__main__":

@@ -71,6 +71,9 @@ def test_01_datalayer_structure_and_timer() -> None:
     assert "Alice Zhang" in author_repr
     assert "5" in author_repr
 
+    print(paper_repr)
+    print(author_repr)
+
     # timer
     with timer("Test Timer: sum from 0 to 9999"):
         print(sum(range(10000)))
