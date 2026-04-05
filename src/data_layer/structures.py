@@ -23,6 +23,9 @@ class Paper:
 
     def get_paper_with_id(self, paper_id: int):
         return replace(self, paper_id=paper_id)
+
+    def with_paper_id(self, paper_id: int):
+        return self.get_paper_with_id(paper_id)
     
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
@@ -42,6 +45,10 @@ class Paper:
             pages=info.get("pages"),
             source_extra=dict(info.get("source_extra", {}))
         )
+
+    @classmethod
+    def from_dict(cls, info: dict[str, object]):
+        return cls.build_from_dict(info)
     
     def __repr__(self) -> str:
         author_str = ",".join(self.authors[:3])

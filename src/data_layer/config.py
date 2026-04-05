@@ -47,3 +47,50 @@ def ensure_datas_dir_layout() -> None:
 '''
 
 DEFAULT_SLICE_SIZES = (int(1e4), int(1e5), int(1e6)) 
+
+'''
+关于本地存储的配置(id篇) ======================
+'''
+
+DEFAULT_SEGMENT_ID = 0
+SEGMENT_MAX_BYTES = 512 * 1024 * 1024
+SEGMENT_FILENAME_TEMPLATE = "data.seg{segment_id}.bin"
+DOC_TABLE_FILENAME = "doc_table.bin"
+MANIFEST_FILENAME = "manifest.json"
+
+def ensure_lib_dirs(root: Path) -> dict[str, Path]:
+    id_concrete_info_dir = root / "concrete_info"
+    id_meta_info_dir = root / "meta_info"
+    search_index_dir = root / "search_index"
+    root.mkdir(parents=True, exist_ok=True)
+    id_concrete_info_dir.mkdir(parents=True, exist_ok=True)
+    id_meta_info_dir.mkdir(parents=True, exist_ok=True)
+    search_index_dir.mkdir(parents=True, exist_ok=True)
+
+    return {
+        "root": root,
+        "id_concrete_info_dir": id_concrete_info_dir,
+        "id_meta_info_dir": id_meta_info_dir,
+        "search_index_dir": search_index_dir
+    }
+
+'''
+关于本地存储的配置(索引篇) ======================
+'''
+
+BUCKET_COUNT = 256
+FORMAT_VERSION = 1
+BASE_DIRNAME = "base"
+DELTA_DIRNAME = "delta"
+SEARCH_INDEX_MANIFEST_FILENAME = "manifest.json"
+DEFAULT_DELTA_FLUSH_EVERY = 256
+
+BUILDING_DIR_SUFFIX = ".__building__"
+BACKUP_DIR_SUFFIX = ".__backup__"
+
+EXACT_FIELD_NAMES = ("author", "title", "year", "venue") # 不能动
+FIELD_NAMES = ("author", "title", "year", "venue", "title_keyword", "author_keyword")
+
+# 保留旧命名别名，不知道哪里有没改回来的天天爆bug
+EXACT_CATEGORY_NAMES = EXACT_FIELD_NAMES
+CATEGORY_NAMES = FIELD_NAMES

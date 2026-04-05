@@ -1,7 +1,35 @@
-from .t01_structures_and_timer import test_01_datalayer_structure_and_timer
-from .t02_config_path_and_parser import test_02_path_and_parser
+from .T01_paper_author_model_and_dict_roundtrip import test_01_paper_author_model_and_dict_roundtrip
+from .T02_xml_parser_streaming_and_bytes_input import test_02_xml_parser_streaming_and_bytes_input
+from .T03_repository_add_get_delete_and_segment_rollover import (
+    test_03_repository_add_get_delete_and_segment_rollover,
+)
+from .T04_doc_table_load_append_delete_and_manifest_consistency import (
+    test_04_doc_table_load_append_delete_and_manifest_consistency,
+)
+from .T05_disk_index_exact_lookup_keyword_normalization_and_delete_visibility import (
+    test_05_disk_index_exact_lookup_keyword_normalization_and_delete_visibility,
+)
+from .T06_database_engine_import_query_delete_and_reopen_consistency import (
+    test_06_database_engine_import_query_delete_and_reopen_consistency,
+)
+from .T07_search_index_revision_repair_rebuild_and_compact_consistency import (
+    test_07_search_index_revision_repair_rebuild_and_compact_consistency,
+)
+from .T08_repository_append_and_engine_import_performance_baseline_10k import (
+    test_08_repository_append_and_engine_import_performance_baseline_10k,
+)
+from .T09_full_dblp_import_persistence_and_random_sample_verification_manual import (
+    test_09_full_dblp_import_persistence_and_random_sample_verification_manual,
+)
 
 __all__ = [
-    "test_01_datalayer_structure_and_timer",
-    "test_02_path_and_parser"
+    "test_01_paper_author_model_and_dict_roundtrip",
+    "test_02_xml_parser_streaming_and_bytes_input",
+    "test_03_repository_add_get_delete_and_segment_rollover",
+    "test_04_doc_table_load_append_delete_and_manifest_consistency",
+    "test_05_disk_index_exact_lookup_keyword_normalization_and_delete_visibility",
+    "test_06_database_engine_import_query_delete_and_reopen_consistency",
+    "test_07_search_index_revision_repair_rebuild_and_compact_consistency",
+    "test_08_repository_append_and_engine_import_performance_baseline_10k",
+    "test_09_full_dblp_import_persistence_and_random_sample_verification_manual",
 ]
